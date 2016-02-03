@@ -8,18 +8,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.tutorial.spring.examples.output.OutputHelper;
+import com.tutorial.spring.model.Staff;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = { "classpath*:OutputConfig.xml" })
-public class OutputHelperTest {
+@ContextConfiguration(locations = { "classpath*:StaffConfig.xml" })
+public class StaffTest {
 
 	@Autowired
-	private OutputHelper outputHelper;
+	private Staff staffBean;
 
 	@Test
-	public void testGenerator() {
-		assertThat(outputHelper).isNotNull();
-		assertThat(outputHelper.generateOutput()).isEqualTo("json");
+	public void testHelloWorld() {
+		assertThat(staffBean).isNotNull();
+		assertThat(staffBean.getName()).isEqualTo("staff");
 	}
 }

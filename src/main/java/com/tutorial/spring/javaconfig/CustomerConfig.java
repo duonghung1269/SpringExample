@@ -11,7 +11,7 @@ public class CustomerConfig {
 	@Bean(name="customer")
 	public Customer customerModel() {
 		Customer customer = new Customer();
-		customer.setName("hdd");
+		customer.setName("customer");
 		return customer;
 	}
 	

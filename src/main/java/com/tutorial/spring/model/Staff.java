@@ -1,6 +1,6 @@
-package com.tutorial.spring.hdd;
+package com.tutorial.spring.model;
 
-public class HelloWorld {
+public class Staff {
 
 	private String name;
 

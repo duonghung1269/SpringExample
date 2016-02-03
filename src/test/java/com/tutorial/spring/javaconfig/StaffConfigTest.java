@@ -1,4 +1,4 @@
-package com.tutorial.spring.hdd;
+package com.tutorial.spring.javaconfig;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -8,27 +8,28 @@ import org.springframework.beans.factory.NoSuchBeanDefinitionException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import com.tutorial.spring.javaconfig.AppConfig;
+import com.tutorial.spring.javaconfig.StaffConfig;
+import com.tutorial.spring.model.Staff;
 
-public class AppConfigTest {
+public class StaffConfigTest {
 	
 	private static ApplicationContext context;
 	
 	@BeforeClass
 	public static void setup() {
-		context = new AnnotationConfigApplicationContext(AppConfig.class);
+		context = new AnnotationConfigApplicationContext(StaffConfig.class);
 	}
 	
 	@Test
 	public void testHelloWorld() {
-		HelloWorld helloWorld = (HelloWorld) context.getBean("helloWorldBean");
+		Staff helloWorld = (Staff) context.getBean("staffBean");
 		assertThat(helloWorld).isNotNull();
-		assertThat(helloWorld.getName()).isEqualTo("hddTest");
+		assertThat(helloWorld.getName()).isEqualTo("staff");
 	}
 	
 	@Test (expected=NoSuchBeanDefinitionException.class)
 	public void testNoSuchHelloWorldBean() {
-		context.getBean("helloWorldBeanXXX");
+		context.getBean("staffXXX");
 	}
 	
 }
