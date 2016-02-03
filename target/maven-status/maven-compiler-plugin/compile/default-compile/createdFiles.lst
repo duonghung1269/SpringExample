@@ -1,0 +1,6 @@
+com\tutorial\spring\examples\output\impl\JsonOutputGenerator.class
+com\tutorial\spring\javaconfig\AppConfig.class
+com\tutorial\spring\hdd\HelloWorld.class
+com\tutorial\spring\examples\output\IOutputGenerator.class
+com\tutorial\spring\examples\output\OutputHelper.class
+com\tutorial\spring\examples\output\impl\CsvOutputGenerator.class
