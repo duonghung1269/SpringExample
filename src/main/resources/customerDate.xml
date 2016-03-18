@@ -1,0 +1,41 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<bean id="simpleDateFormat" class="java.text.SimpleDateFormat">
+		<constructor-arg value="yyyy-MM-dd" />
+	</bean>
+
+	<bean id="dateEditor"
+		class="org.springframework.beans.propertyeditors.CustomDateEditor">
+
+		<constructor-arg>
+			<ref local="simpleDateFormat"/>
+		</constructor-arg>
+		<constructor-arg value="true" />
+
+	</bean>
+
+	<bean class="org.springframework.beans.factory.config.CustomEditorConfigurer">
+		<property name="propertyEditorRegistrars">
+			<list>
+				<bean class="com.tutorial.spring.model.CustomDateEditorRegistrar" />
+			</list>
+		</property>
+	</bean>
+
+<!-- 	<bean class="org.springframework.beans.factory.config.CustomEditorConfigurer"> -->
+<!-- 		<property name="customEditors"> -->
+<!-- 			<map> -->
+<!-- 				<entry key="java.util.Date"> -->
+<!-- 					<ref local="dateEditor" /> -->
+<!-- 				</entry> -->
+<!-- 			</map> -->
+<!-- 		</property> -->
+<!-- 	</bean> -->
+
+	<bean id="customerBean" class="com.tutorial.spring.model.Customer">
+		<property name="dob" value="2000-01-15" />
+	</bean>
+</beans>

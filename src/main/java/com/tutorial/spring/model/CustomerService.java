@@ -1,8 +1,8 @@
 package com.tutorial.spring.model;
-public class CustomerService 
-{
+
+public class CustomerService {
 	String message;
-	
+
 	public String getMessage() {
 		return message;
 	}
